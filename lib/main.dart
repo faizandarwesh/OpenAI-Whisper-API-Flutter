@@ -41,8 +41,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String text = "";
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,23 +73,48 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 FloatingActionButton(
-                  onPressed: () => TranscribeService().transcribe("chinese"),
+                  onPressed: () async{
+                    text = await TranscribeService().transcribeFromFile("chinese");
+                    setState(() {
+
+                    });
+                  },
                   child: const Icon(Icons.looks_one),
                 ),
                 FloatingActionButton(
-                  onPressed: () => TranscribeService().transcribe("arabic"),
+                  onPressed: () async{
+                    text = await TranscribeService().transcribeFromFile("arabic");
+                    setState(() {
+
+                    });
+                  },
                   child: const Icon(Icons.looks_two),
                 ),
                 FloatingActionButton(
-                  onPressed: () => TranscribeService().transcribe("hindi"),
+                  onPressed: () async{
+                    text = await TranscribeService().transcribeFromFile("hindi");
+                    setState(() {
+
+                    });
+                  },
                   child: const Icon(Icons.looks_3),
                 ),
                 FloatingActionButton(
-                  onPressed: () => TranscribeService().transcribe("ehad"),
+                  onPressed: () async{
+                    text = await TranscribeService().transcribeFromFile("ehad");
+                    setState(() {
+
+                    });
+                  },
                   child: const Icon(Icons.looks_4),
                 ),
                 FloatingActionButton(
-                  onPressed: () => TranscribeService().transcribe("french"),
+                  onPressed: () async{
+                    text = await TranscribeService().transcribeFromFile("french");
+                    setState(() {
+
+                    });
+                  },
                   child: const Icon(Icons.looks_5),
                 ),
               ],
